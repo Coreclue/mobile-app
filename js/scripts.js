@@ -160,11 +160,10 @@ let formValidation = (function () {
 
     let dialogPromiseReject;
 
-                //event listener called on the button inside of event function called the showDetails function to console.log() on each click.
-                button.addEventListener("click", function (event) {
-                    showDetails(pokemon)
-                })
-            }
+    // Hide the modal
+    function hideModal() {
+        let modalContainer = document.querySelector('#modal-container');
+        modalContainer.classList.remove('is-visible');
 
 
         function loadList() {
