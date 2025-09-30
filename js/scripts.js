@@ -172,17 +172,26 @@ let formValidation = (function () {
         }
     }
 
-        function loadDetails (item) {
-            let url = item.DetailsUrl;
-            return fetch(url).then(function (response) {
-                return response.json();
-            }).then(function (details) {
-                item.imageUrl = details.sprites.front_default;
-                item.height = details.height;
-            }).catch(function (error) {
-                console.log(error);
-            })
-        }
+    // Show a dialog with confirm/cancel buttons
+    function showDialog(title, text) {
+        showModal(title, text);
+
+        let modalContainer = document.querySelector('#modal-container');
+        let modal = document.querySelector('.modal');
+
+        let dialogPromiseReject;
+
+        let confirmButton = document.createElement('button');
+        confirmButton.classList.add('modal-confirm');
+        confirmButton.innerText = 'confirm';
+
+        let cancelButton = document.createElement('button');
+        cancelButton.classList.add('modal-cancel');
+        cancelButton.innerText = 'cancel';
+
+        modal.appendChild(confirmButton);
+        modal.appendChild(cancelButton);
+        modalContainer.appendChild(modal);
 
 
 
