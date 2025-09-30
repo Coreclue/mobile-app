@@ -195,7 +195,34 @@ let formValidation = (function () {
 
         confirmButton.focus();
 
+        return new Promise((resolve, reject) => {
+            cancelButton.addEventListener('click', hideModal);
+            confirmButton.addEventListener('click', () => {
+                dialogPromiseReject = null;
 
+                hideModal();
+                resolve();
+            });
+            dialogPromiseReject = resolve;
+        });
+    }
+
+    // Show dialog when clicking the button
+    document.querySelector('#show-dialog').addEventListener('click', () => {
+        showDialog('confirm action', 'Are you sure you want to do this?').then(function() {
+            alert('confirmed!');
+        }, () => {
+            alert('not confirmed');
+        });
+    });
+
+    // Hide modal on Escape key
+    window.addEventListener('keydown', (e) => {
+        let modalContainer = document.querySelector('#modal-container');
+        if (e.key === 'Escape' && modalContainer.classList.contains('is-visible')) {
+            hideModal();
+        }
+    });
 
     // returns access outside of function.
     return {
