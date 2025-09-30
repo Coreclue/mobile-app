@@ -224,26 +224,19 @@ let formValidation = (function () {
         }
     });
 
-    // returns access outside of function.
+    // Expose public functions
     return {
-        add:  add,
-        getAll: getAll,
-        addListItem: addListItem,
-        loadList: loadList,
-        loadDetails: loadDetails,
-        showDetails: showDetails
-        };
+        showModal: showModal,
+        hideModal: hideModal,
+        showDialog: showDialog
+    };
+
+})();
 
 
-})() // IIFE ends
 
-//Use forEach loop to iterate over the all the property and values in the pokemonRepository object using the getAll() to access it outside of IIFE.
 
-pokemonRepository.loadList().then(function () {
-    pokemonRepository.getAll().forEach(function (pokemon) {
-        pokemonRepository.addListItem(pokemon);
-    })
-})
+
 
 
 
