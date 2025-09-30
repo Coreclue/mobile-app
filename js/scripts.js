@@ -144,8 +144,14 @@ let formValidation = (function () {
 
         modalContainer.classList.add('is-visible');
 
-                let listItem = document.createElement("li") // created list assigned to listItem.
-                let button = document.createElement("button") //variable creating new button.
+        // Hide modal when clicking outside of it
+        modalContainer.addEventListener('click', (e) => {
+            let target = e.target;
+            if (target === modalContainer) {
+                hideModal();
+            }
+        });
+    }
 
                 button.innerText = pokemon.name // called name from repositoryList object, accessed by pokemon parameter.
                 button.classList.add("button") //added a class to the new button element.
