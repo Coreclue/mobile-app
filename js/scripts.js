@@ -153,8 +153,10 @@ let formValidation = (function () {
         });
     }
 
-                button.innerText = pokemon.name // called name from repositoryList object, accessed by pokemon parameter.
-                button.classList.add("button") //added a class to the new button element.
+    // Show a sample modal when clicking the button
+    document.querySelector('#show-modal').addEventListener('click', () => {
+        showModal('modal title', 'This is the modal content!', null);
+    });
 
                 listItem.appendChild(button) // use variable to append button element to li element.
                 ulpokelist.appendChild(listItem) //appended list to unordered list.
