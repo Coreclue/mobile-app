@@ -1,4 +1,8 @@
-let pokemonRepository= (function () {
+// ===============================
+// Pokemon Repository Module (IIFE)
+// ===============================
+let pokemonRepository = (function () {
+    // List to store all pokemon objects
     let pokemonList = [];
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=80';
 
