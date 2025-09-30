@@ -142,8 +142,7 @@ let formValidation = (function () {
         modal.appendChild(contentElement);
         modalContainer.appendChild(modal);
 
-        function addListItem(pokemon) {
-                let ulpokelist = document.querySelector("ul") //variable has new ul assigned.
+        modalContainer.classList.add('is-visible');
 
                 let listItem = document.createElement("li") // created list assigned to listItem.
                 let button = document.createElement("button") //variable creating new button.
