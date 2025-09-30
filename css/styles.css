@@ -80,7 +80,7 @@ label {
 
 @media (max-width: 400px) {
     .pokemon-list {
-        height: auto;
+        height: 100%;
         background-color: yellowgreen;
 
 
@@ -97,8 +97,8 @@ label {
 
 @media (min-width: 1440px)  {
     .pokemon-list {
-        background-color: red;
-        height: auto;
+        background-color: gray;
+        height: 100%;
     }
 }
 
