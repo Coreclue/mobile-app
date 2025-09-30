@@ -102,10 +102,41 @@ pokemonRepository.loadList().then(function () {
 });
 
 
-        function showDetails(pokemon) {
-            loadDetails(pokemon).then(function () {
-                console.log(pokemon);
-            })
+// ===============================
+// Form Validation & Modal Module (IIFE)
+// ===============================
+let formValidation = (function () {
+
+    // Show a modal with title, text, and optional image
+    function showModal(title, text, imageUrl) {
+        let modalContainer = document.querySelector('#modal-container');
+        modalContainer.innerText = '';
+
+        let modal = document.createElement('div');
+        modal.classList.add('modal');
+
+        let closeButtonElement = document.createElement('button');
+        closeButtonElement.classList.add('modal-close');
+        closeButtonElement.innerText = 'close';
+        closeButtonElement.addEventListener('click', hideModal);
+
+        let titleElement = document.createElement('h1');
+        titleElement.innerText = title;
+
+        let contentElement = document.createElement('p');
+        contentElement.innerText = text;
+
+        modal.appendChild(closeButtonElement);
+        modal.appendChild(titleElement);
+        modal.appendChild(contentElement);
+        modalContainer.appendChild(modal);
+
+        // Only add image if imageUrl is provided
+        if (imageUrl) {
+            let imageElement = document.createElement('img');
+            imageElement.src = imageUrl;
+            imageElement.alt = title;
+            modal.appendChild(imageElement);
         }
 
 
