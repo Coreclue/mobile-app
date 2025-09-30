@@ -4,6 +4,7 @@
 let pokemonRepository = (function () {
     // List to store all pokemon objects
     let pokemonList = [];
+    // API URL to fetch pokemon data
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=80';
 
 
