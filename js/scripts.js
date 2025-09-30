@@ -7,6 +7,88 @@ let pokemonRepository = (function () {
     // API URL to fetch pokemon data
     let apiUrl = 'https://pokeapi.co/api/v2/pokemon/?limit=80';
 
+    // Add a new pokemon to the list
+    function add(pokemon) {
+        pokemonList.push(pokemon);
+    }
+
+    // Get all pokemon from the list
+    function getAll() {
+        return pokemonList;
+    }
+
+    // Load details from the API, then call to display the modal
+    function showDetails(pokemon) {
+        loadDetails(pokemon).then(function () {
+            // Show modal with name, height, and image
+            formValidation.showModal(
+                pokemon.name,
+                'Height: ' + pokemon.height + 'm',
+                pokemon.imageUrl
+            );
+        });
+    }
+
+    // Create and add a list item (button) for each pokemon
+    function addListItem(pokemon) {
+        let ulpokelist = document.querySelector('ul');
+        let listItem = document.createElement('li');
+        let button = document.createElement('button');
+
+        // Set button text and class
+        button.innerText = pokemon.name;
+        button.classList.add('button');
+
+        // Append button to list item, and list item to ul
+        listItem.appendChild(button);
+        ulpokelist.appendChild(listItem);
+
+        // Add event listener to show details modal on click
+        button.addEventListener('click', function () {
+            showDetails(pokemon);
+        });
+    }
+
+    // Load the list of pokemon from the API
+    function loadList() {
+        return fetch(apiUrl).then(function (response) {
+            return response.json();
+        }).then(function (json) {
+            json.results.forEach(function (item) {
+                let pokemon = {
+                    name: item.name,
+                    detailsUrl: item.url
+                };
+                add(pokemon);
+            });
+        }).catch(function (error) {
+            console.log(error);
+        });
+    }
+
+    // Load details for a specific pokemon
+    function loadDetails(item) {
+        let url = item.detailsUrl;
+        return fetch(url).then(function (response) {
+            return response.json();
+        }).then(function (details) {
+            item.imageUrl = details.sprites.front_default;
+            item.height = details.height;
+        }).catch(function (error) {
+            console.log(error);
+        });
+    }
+
+    // Return public functions to access outside of the IIFE
+    return {
+        add: add,
+        getAll: getAll,
+        addListItem: addListItem,
+        loadList: loadList,
+        loadDetails: loadDetails,
+        showDetails: showDetails
+    };
+})(); // IIFE ends
 
         function add(pokemon) {
             pokemonList.push(pokemon);
