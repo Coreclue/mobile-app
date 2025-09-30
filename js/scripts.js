@@ -90,9 +90,6 @@ let pokemonRepository = (function () {
     };
 })(); // IIFE ends
 
-        function add(pokemon) {
-            pokemonList.push(pokemon);
-        }
 
         function getAll() {
             return pokemonList
