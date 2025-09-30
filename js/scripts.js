@@ -35,8 +35,8 @@ let pokemonRepository = (function () {
         let listItem = document.createElement('li');
         let button = document.createElement('button');
 
-        // Set button text and class
-        button.innerText = pokemon.name;
+        // Set button text and class. Capitalize first letter of name
+        button.innerText = pokemon.name.charAt(0).toUpperCase() + pokemon.name.slice(1);
         button.classList.add('button');
 
         // Append button to list item, and list item to ul
@@ -128,8 +128,7 @@ let formValidation = (function () {
 
         modal.appendChild(closeButtonElement);
         modal.appendChild(titleElement);
-        modal.appendChild(contentElement);
-        modalContainer.appendChild(modal);
+        
 
         // Only add image if imageUrl is provided
         if (imageUrl) {
@@ -179,7 +178,6 @@ let formValidation = (function () {
         let modalContainer = document.querySelector('#modal-container');
         let modal = document.querySelector('.modal');
 
-        let dialogPromiseReject;
 
         let confirmButton = document.createElement('button');
         confirmButton.classList.add('modal-confirm');
