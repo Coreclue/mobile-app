@@ -170,6 +170,7 @@ let formValidation = (function () {
             dialogPromiseReject();
             dialogPromiseReject = null;
         }
+    }
 
         function loadDetails (item) {
             let url = item.DetailsUrl;
