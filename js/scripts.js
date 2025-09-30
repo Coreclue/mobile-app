@@ -139,6 +139,8 @@ let formValidation = (function () {
             modal.appendChild(imageElement);
         }
 
+        modal.appendChild(contentElement);
+        modalContainer.appendChild(modal);
 
         function addListItem(pokemon) {
                 let ulpokelist = document.querySelector("ul") //variable has new ul assigned.
