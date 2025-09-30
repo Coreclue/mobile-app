@@ -158,8 +158,7 @@ let formValidation = (function () {
         showModal('modal title', 'This is the modal content!', null);
     });
 
-                listItem.appendChild(button) // use variable to append button element to li element.
-                ulpokelist.appendChild(listItem) //appended list to unordered list.
+    let dialogPromiseReject;
 
                 //event listener called on the button inside of event function called the showDetails function to console.log() on each click.
                 button.addEventListener("click", function (event) {
