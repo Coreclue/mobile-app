@@ -193,6 +193,7 @@ let formValidation = (function () {
         modal.appendChild(cancelButton);
         modalContainer.appendChild(modal);
 
+        confirmButton.focus();
 
 
 
