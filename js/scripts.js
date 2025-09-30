@@ -91,9 +91,16 @@ let pokemonRepository = (function () {
 })(); // IIFE ends
 
 
-        function getAll() {
-            return pokemonList
-        }
+// ===============================
+// Main App Initialization
+// ===============================
+// Use forEach loop to iterate over all pokemon and add them to the UI
+pokemonRepository.loadList().then(function () {
+    pokemonRepository.getAll().forEach(function (pokemon) {
+        pokemonRepository.addListItem(pokemon);
+    });
+});
+
 
         function showDetails(pokemon) {
             loadDetails(pokemon).then(function () {
