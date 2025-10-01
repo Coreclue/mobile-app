@@ -1,45 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>Pokemon JS App</title>
-    <link rel="stylesheet" href="css/styles.css">
-</head>
-<body>
-<ul class="pokemon-list"></ul>
+    <link rel="stylesheet" href="css/styles.css" />
+  </head>
+  <body>
+    <ul class="pokemon-list"></ul>
 
+    <form id="register-form">
+      <div class="input-wrapper">
+        <label for="email">E-mail</label>
+        <input id="email" type="email" />
+      </div>
 
-<form id='register-form'>
+      <div class="input-wrapper">
+        <label for="password">Password</label>
+        <input id="password" type="password" />
+      </div>
+      <button>Register</button>
+    </form>
 
-    <div class='input-wrapper'>
-        <label for='email'>E-mail</label>
-        <input id='email' type='email'>
-    </div>
+    <button id="show-modal">Show modal</button>
 
-    <div class='input-wrapper'>
-        <label for='password'>Password</label>
-        <input id='password' type='password'>
-    </div>
-    <button>Register</button>
+    <button id="show-dialog">Show Dialog</button>
 
-</form>
+    <div id="modal-container"></div>
 
-<button id='show-modal'>Show modal</button>
+    <!--<script src="scripts.js"></script>-->
 
-<button id="show-dialog">Show Dialog</button>
-
-<div id='modal-container'>
-
-
-</div>
-
-
-<!--<script src="scripts.js"></script>-->
-
-
-<script src="js/js-polyfill/polyfill.min.js"></script>
-<script src="js/js-polyfill/fetch.umd.js"></script>
-<script src="js/scripts.js"></script>
-</body>
+    <script src="js/js-polyfill/polyfill.min.js"></script>
+    <script src="js/js-polyfill/fetch.umd.js"></script>
+    <script src="js/scripts.js"></script>
+  </body>
 </html>
