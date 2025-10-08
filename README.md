@@ -1,7 +1,6 @@
-# Welcome to GitHub Desktop!
+# Welcome to my Pokedex!
 
-This is your README. READMEs are where you can communicate what your project is and how to use it.
+This app works by displaying some of the best pokemmeon characteristics, provides a interactive display by clciking on each pokemon. 
 
-Write your name on line 6, save it, and then head back to GitHub Desktop.
 
 Brian
